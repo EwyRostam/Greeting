@@ -6,6 +6,6 @@ namespace Backend.Controllers
     [Route("[controller]")]
     public class GreetingsController : ControllerBase
     {
-
+        
     }
 }
