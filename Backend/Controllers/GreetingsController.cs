@@ -1,6 +1,7 @@
 using Backend.Data;
 using Backend.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace Backend.Controllers
 {
@@ -22,6 +23,12 @@ namespace Backend.Controllers
             await _context.Greetings.AddAsync(greetingToAdd);
             await _context.SaveChangesAsync();
             return greetingToAdd;
+        }
+
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<Greeting>>> GetAllGreetings()
+        {
+            return await _context.Greetings.ToListAsync();
         }
     }
 }
