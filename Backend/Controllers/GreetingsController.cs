@@ -30,5 +30,6 @@ namespace Backend.Controllers
         {
             return await _context.Greetings.ToListAsync();
         }
+        
     }
 }
